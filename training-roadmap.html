@@ -241,9 +241,14 @@
   <div class="nav-section">
     <div class="nav-section-label">Tổng quan</div>
     <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a href="lich-training.html" class="nav-item"><span class="nav-icon">📋</span> Lịch Training</a>
+    <a href="tiendo.html" class="nav-item"><span class="nav-icon">📊</span> Tiến độ của tôi</a>
+  </div>
+  <div class="nav-divider"></div>
+  <div class="nav-section">
+    <div class="nav-section-label">Đào Tạo</div>
     <a href="onboarding.html" class="nav-item"><span class="nav-icon">🎓</span> Onboarding Roadmap <span class="nav-badge" style="background:#0d9488">Mới</span></a>
     <a href="training-roadmap.html" class="nav-item active"><span class="nav-icon">📅</span> Lộ Trình 30 Ngày <span class="nav-badge" style="background:#7c3aed">Hot</span></a>
-    <a href="search.html" class="nav-item"><span class="nav-icon">🔍</span> Tìm kiếm</a>
   </div>
   <div class="nav-divider"></div>
   <div class="nav-section">
@@ -265,6 +270,13 @@
   <div class="nav-section">
     <div class="nav-section-label">Xử Lý Sự Cố</div>
     <a href="trouble.html" class="nav-item"><span class="nav-icon">🚨</span> Trouble Handling <span class="nav-badge" style="background:#ef4444">34 cases</span></a>
+  </div>
+  <div class="nav-divider"></div>
+  <div class="nav-section">
+    <div class="nav-section-label">Công Cụ & Hệ Thống</div>
+    <a href="crm.html" class="nav-item"><span class="nav-icon">💬</span> Pancake CRM</a>
+    <a href="template.html" class="nav-item"><span class="nav-icon">📝</span> Template & Script</a>
+    <a href="video.html" class="nav-item"><span class="nav-icon">🎬</span> Thư viện Video</a>
   </div>
 </nav>
 
@@ -3175,13 +3187,312 @@
       <span class="week-toggle-btn">▼</span>
     </div>
     <div class="week-body">
-      <div class="coming-soon-week">
-        <span class="cs-icon">🔧</span>
-        <strong>Đang cập nhật nội dung thực hành</strong><br>
-        <span style="margin-top:6px;display:block">Sẽ bao gồm: 5 mock order, 3 trouble case, 1 buổi roleplay với khách hàng giả lập</span>
-        <br>
-        <a href="trouble.html" style="color:var(--blue);font-weight:600;font-size:13px;text-decoration:none">Xem Trouble Handling Library (34 cases) →</a>
+
+      <!-- Day 15 -->
+      <div class="day-card" id="day-15">
+        <div class="day-header" onclick="toggleDay('day-15')">
+          <div class="day-num" id="dn-15">15</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Khách phàn nàn — Tracking sai / Hàng chưa tới</div>
+            <div class="day-sub">Scenario 1 · Áp dụng: CSKH, POD, Dropship, Express</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">🎯 Tình huống thực tế</div>
+            <div class="practice-box">Khách nhắn tin: <em>"Tôi đặt hàng 10 ngày rồi mà tracking vẫn không cập nhật, hàng ở đâu vậy?"</em><br><br>Bạn là nhân viên CSKH / phòng ban phụ trách. Hãy xử lý toàn bộ từ A→Z: kiểm tra đơn, liên hệ vận chuyển, phản hồi khách, ghi nhận incident.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">📋 Các bước cần thực hiện</div>
+            <ul class="check-list">
+              <li>Bước 1: Xác nhận thông tin đơn hàng (mã đơn, ngày đặt, địa chỉ, carrier)</li>
+              <li>Bước 2: Kiểm tra tracking trên hệ thống carrier + hệ thống nội bộ</li>
+              <li>Bước 3: Xác định vấn đề — delay bình thường, hàng kẹt kho, hay mất hàng</li>
+              <li>Bước 4: Phản hồi khách trong vòng 30 phút với thông tin cụ thể</li>
+              <li>Bước 5: Ghi nhận vào hệ thống + tag escalation nếu cần</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Tracking không cập nhật sau bao nhiêu ngày thì cần escalate? <span class="answer">→ Thường 3–5 ngày không update là bất thường, cần liên hệ carrier ngay.</span></li>
+              <li>Bạn phản hồi khách như thế nào khi chưa biết chắc nguyên nhân? <span class="answer">→ Thừa nhận vấn đề, đưa thời gian phản hồi cụ thể, không hứa hẹn vô căn cứ.</span></li>
+              <li>Khi nào thì xử lý hoàn tiền thay vì tiếp tục theo dõi? <span class="answer">→ Khi hàng xác nhận mất (carrier xác nhận) hoặc quá hạn cam kết giao hàng mà không có cập nhật.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Phản hồi khách trong 30 phút, xác định đúng vấn đề, ghi nhận đầy đủ vào hệ thống.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Để khách chờ không phản hồi, hoặc phản hồi chung chung không có thông tin cụ thể.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-15" onclick="markDone(15)">Đánh dấu hoàn thành Ngày 15</button>
+        </div>
       </div>
+
+      <!-- Day 16 -->
+      <div class="day-card" id="day-16">
+        <div class="day-header" onclick="toggleDay('day-16')">
+          <div class="day-num" id="dn-16">16</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Đơn hàng lỗi địa chỉ — Xử lý khẩn</div>
+            <div class="day-sub">Scenario 2 · Áp dụng: POD, Dropship, Fulfill, Express</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">🎯 Tình huống thực tế</div>
+            <div class="practice-box">Đơn hàng đã được pick & pack, sắp giao cho carrier. Khách nhắn tin báo địa chỉ giao hàng bị sai (nhầm số nhà / quận / zip code). Carrier pickup sau 2 tiếng.<br><br>Bạn có 2 tiếng để xử lý — làm gì?</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">📋 Các bước cần thực hiện</div>
+            <ul class="check-list">
+              <li>Bước 1: Xác nhận địa chỉ đúng từ khách (bản chụp màn hình / xác nhận qua Zalo)</li>
+              <li>Bước 2: Kiểm tra trạng thái đơn hàng — đã label chưa, đã handover chưa</li>
+              <li>Bước 3: Liên hệ kho / vận hành để hold lại đơn nếu chưa pickup</li>
+              <li>Bước 4: Nếu đã pickup — liên hệ carrier yêu cầu address correction</li>
+              <li>Bước 5: Cập nhật địa chỉ trong hệ thống, ghi log toàn bộ quá trình</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Nếu đơn đã được carrier pickup rồi, address correction có được không? <span class="answer">→ Tùy carrier — một số cho phép correction trước khi out-for-delivery; phải liên hệ carrier ngay lập tức.</span></li>
+              <li>Trách nhiệm chi phí sửa địa chỉ thuộc về ai? <span class="answer">→ Nếu khách nhập sai: khách chịu phí. Nếu hệ thống gây lỗi: công ty chịu. Cần xác định rõ trước khi báo khách.</span></li>
+              <li>Khi nào thì hủy đơn thay vì sửa địa chỉ? <span class="answer">→ Khi chi phí sửa cao hơn giá trị đơn, hoặc carrier không hỗ trợ correction cho tuyến đó.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Xử lý trong 2 tiếng, ghi log đầy đủ, thông báo kết quả rõ ràng cho khách và nội bộ.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Để đơn đi sai địa chỉ mà không có hành động, hoặc không ghi nhận incident.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-16" onclick="markDone(16)">Đánh dấu hoàn thành Ngày 16</button>
+        </div>
+      </div>
+
+      <!-- Day 17 -->
+      <div class="day-card" id="day-17">
+        <div class="day-header" onclick="toggleDay('day-17')">
+          <div class="day-num" id="dn-17">17</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Khách yêu cầu hoàn tiền — Dispute Resolution</div>
+            <div class="day-sub">Scenario 3 · Áp dụng: CSKH, Kế toán, Sale</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">🎯 Tình huống thực tế</div>
+            <div class="practice-box">Khách email: <em>"Tôi muốn hoàn tiền đơn hàng #12345. Hàng giao sai màu so với mô tả trên website. Tôi không chấp nhận đổi hàng, chỉ cần hoàn tiền."</em><br><br>Đây có phải lý do hợp lệ để hoàn tiền không? Bạn xử lý như thế nào?</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">📋 Các bước cần thực hiện</div>
+            <ul class="check-list">
+              <li>Bước 1: Xác minh đơn hàng — kiểm tra mô tả sản phẩm vs hàng thực tế giao</li>
+              <li>Bước 2: Yêu cầu khách gửi ảnh hàng thực nhận</li>
+              <li>Bước 3: Phân loại: lỗi của công ty hay hiểu lầm của khách</li>
+              <li>Bước 4: Nếu lỗi của công ty → approve hoàn tiền theo quy trình</li>
+              <li>Bước 5: Phối hợp Kế toán xử lý refund, thông báo khách timeline</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Ai có quyền approve hoàn tiền? <span class="answer">→ CSKH xử lý trường hợp nhỏ (theo hạn mức); trường hợp lớn cần Trưởng phòng CSKH hoặc quản lý duyệt.</span></li>
+              <li>Thời gian hoàn tiền về tài khoản khách thường là bao lâu? <span class="answer">→ 3–7 ngày làm việc tùy phương thức thanh toán và ngân hàng khách.</span></li>
+              <li>Nếu khách khai lỗi nhưng bằng chứng không rõ ràng, xử lý thế nào? <span class="answer">→ Nhờ khách cung cấp thêm bằng chứng (video mở hộp, ảnh rõ nét), không approve vội khi chưa đủ thông tin.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Xác minh đúng nguyên nhân, xử lý theo quy trình, phối hợp đúng phòng ban, thông báo timeline rõ ràng cho khách.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Approve hoàn tiền không xác minh, hoặc từ chối hoàn tiền khi lỗi rõ ràng thuộc về công ty.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-17" onclick="markDone(17)">Đánh dấu hoàn thành Ngày 17</button>
+        </div>
+      </div>
+
+      <!-- Day 18 -->
+      <div class="day-card" id="day-18">
+        <div class="day-header" onclick="toggleDay('day-18')">
+          <div class="day-num" id="dn-18">18</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Phối hợp liên phòng ban — Case leo thang</div>
+            <div class="day-sub">Scenario 4 · Áp dụng: Tất cả phòng ban</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">🎯 Tình huống thực tế</div>
+            <div class="practice-box">Khách VIP (đơn hàng >$2,000) gặp vấn đề: hàng giao đúng nhưng thiếu 1 item trong box. Khách đã nhắn tin cho 3 người khác nhau ở THG nhưng chưa ai giải quyết được vì không biết ai phụ trách.<br><br>Bạn nhận được case này. Làm thế nào để giải quyết VÀ tránh tình trạng này lặp lại?</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">📋 Các bước cần thực hiện</div>
+            <ul class="check-list">
+              <li>Bước 1: Nhận ownership — xác nhận với khách rằng BẠN sẽ theo đến khi xong</li>
+              <li>Bước 2: Tổng hợp lại toàn bộ thông tin từ 3 người đã tiếp nhận trước</li>
+              <li>Bước 3: Xác định phòng ban chịu trách nhiệm chính (Kho? Vận hành? Fulfillment?)</li>
+              <li>Bước 4: Lập ticket nội bộ, assign đúng người, set deadline xử lý</li>
+              <li>Bước 5: Cập nhật khách sau mỗi bước; đóng case khi hoàn tất; báo cáo root cause</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Khi nhận case "rơi vãi" (không ai nhận), ai phải chủ động pick up? <span class="answer">→ Người đầu tiên nhận ra vấn đề có trách nhiệm tạm thời nhận ownership và escalate đúng chỗ — không được bỏ qua.</span></li>
+              <li>Làm thế nào tránh để khách phải giải thích lại nhiều lần? <span class="answer">→ Lập ticket tập trung chứa toàn bộ lịch sử, chia sẻ nội bộ thay vì mỗi người trao đổi riêng với khách.</span></li>
+              <li>Root cause analysis có vai trò gì sau khi giải quyết xong case? <span class="answer">→ Xác định tại sao xảy ra để vá quy trình, tránh lặp lại; không chỉ giải quyết triệu chứng.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Nhận ownership, resolve đúng quy trình, khách hài lòng, có báo cáo root cause sau case.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Đẩy trách nhiệm sang phòng khác mà không theo dõi, hoặc không có root cause sau khi xong.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-18" onclick="markDone(18)">Đánh dấu hoàn thành Ngày 18</button>
+        </div>
+      </div>
+
+      <!-- Day 19 -->
+      <div class="day-card" id="day-19">
+        <div class="day-header" onclick="toggleDay('day-19')">
+          <div class="day-num" id="dn-19">19</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Mock Day — Giả lập 1 ngày làm việc đầy đủ</div>
+            <div class="day-sub">Scenario 5 · Roleplay có mentor giám sát</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">🎯 Tình huống thực tế</div>
+            <div class="practice-box">Mentor sẽ đóng vai: khách hàng, đồng nghiệp phòng khác, và quản lý — trong suốt 4 tiếng buổi sáng.<br><br>Bạn phải xử lý: <strong>2 ticket khách hàng mới, 1 case leo thang từ hôm qua, 1 yêu cầu phối hợp nội bộ, và báo cáo cuối ngày</strong> — tất cả trong thời gian thực, không có gợi ý.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">📋 Mục tiêu của bài</div>
+            <ul class="check-list">
+              <li>Ưu tiên việc đúng (không xử lý theo thứ tự random)</li>
+              <li>Giao tiếp rõ ràng — với khách và nội bộ</li>
+              <li>Ghi nhận tất cả vào hệ thống trong ngày</li>
+              <li>Hoàn thành báo cáo EOD (end-of-day) trước 5:30 PM</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Bạn đã ưu tiên task theo tiêu chí nào? <span class="answer">→ Urgency × Impact: khách VIP, deadlines cứng, hoặc issue đang leo thang được ưu tiên trước.</span></li>
+              <li>Lần nào bạn cảm thấy overwhelmed và xử lý thế nào? <span class="answer">→ Ghi nhận lại để improve quy trình; trong tình huống thực tế: thông báo manager sớm, không ôm một mình.</span></li>
+              <li>EOD report cần có những thông tin gì? <span class="answer">→ Số ticket xử lý, case đang pending, vấn đề cần escalate, ghi chú bàn giao ca tiếp theo.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Xử lý được ≥ 3/4 task đúng quy trình, EOD report đầy đủ, mentor đánh giá "có thể làm độc lập có giám sát".</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Bỏ sót task, không ghi nhận hệ thống, hoặc mentor phải can thiệp nhiều hơn 2 lần.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-19" onclick="markDone(19)">Đánh dấu hoàn thành Ngày 19</button>
+        </div>
+      </div>
+
+      <!-- Day 20 -->
+      <div class="day-card" id="day-20">
+        <div class="day-header" onclick="toggleDay('day-20')">
+          <div class="day-num" id="dn-20">20</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Sự cố vận chuyển — Hàng delay / Mất hàng</div>
+            <div class="day-sub">Scenario 6 · Áp dụng: POD, Dropship, Fulfill, Express</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">🎯 Tình huống thực tế</div>
+            <div class="practice-box">Carrier thông báo: <em>"Kiện hàng #XY789 đã bị hư hỏng trong quá trình vận chuyển. Không thể giao. Đang chờ hướng dẫn xử lý."</em><br><br>Đây là đơn Dropship, giá trị $350. Khách chưa biết. Bạn làm gì ngay bây giờ?</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">📋 Các bước cần thực hiện</div>
+            <ul class="check-list">
+              <li>Bước 1: Yêu cầu carrier cung cấp ảnh hàng hư hỏng và claim number</li>
+              <li>Bước 2: Kiểm tra bảo hiểm vận chuyển — đơn này có mua insurance không?</li>
+              <li>Bước 3: Thông báo khách với thái độ chủ động, không chờ khách hỏi</li>
+              <li>Bước 4: Đề xuất phương án: re-ship miễn phí, hoàn tiền, hoặc credit</li>
+              <li>Bước 5: Mở claim với carrier, theo dõi đến khi nhận được đền bù</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Ai chịu chi phí re-ship khi hàng bị hư do carrier? <span class="answer">→ Carrier phải chịu (qua claim bảo hiểm). Công ty có thể ứng trước và claim sau để không để khách chờ.</span></li>
+              <li>Thời hạn nộp claim với carrier thường là bao lâu? <span class="answer">→ Thường 15–30 ngày sau ngày giao hàng dự kiến; cần kiểm tra điều khoản từng carrier cụ thể.</span></li>
+              <li>Nếu khách kiên quyết đòi hoàn tiền ngay trong khi claim đang xử lý? <span class="answer">→ Hoàn tiền khách trước (nếu lỗi rõ ràng của carrier), rồi thu hồi từ claim sau — không để khách chờ claim.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Proactive thông báo khách, mở claim đúng hạn, đề xuất phương án giải quyết rõ ràng.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Chờ khách hỏi mới thông báo, quên mở claim với carrier, hoặc không theo dõi đến khi giải quyết xong.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-20" onclick="markDone(20)">Đánh dấu hoàn thành Ngày 20</button>
+        </div>
+      </div>
+
+      <!-- Day 21 -->
+      <div class="day-card" id="day-21">
+        <div class="day-header" onclick="toggleDay('day-21')">
+          <div class="day-num" id="dn-21">21</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Review Tuần 3 — Mentor Feedback & Chuẩn bị Tuần 4</div>
+            <div class="day-sub">Ngày tổng kết · Nhận xét điểm mạnh / điểm cần cải thiện</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Nội dung buổi review</div>
+            <div class="practice-box">Ngồi 1-1 với mentor khoảng 60 phút. Mentor sẽ review lại 5 scenario đã làm (Ngày 15–20), đưa ra nhận xét cụ thể. Bạn cần tự đánh giá trước: đâu là điểm bạn tự tin nhất, đâu là điểm còn lúng túng.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✍️ Bài tập tự đánh giá</div>
+            <ul class="check-list">
+              <li>Viết ra 3 điều bạn làm tốt trong Tuần 3</li>
+              <li>Viết ra 2 điều bạn cần cải thiện trước Tuần 4</li>
+              <li>Đặt 1 câu hỏi cụ thể cho mentor về tình huống bạn chưa hiểu</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Quy trình nào bạn cảm thấy tự tin có thể làm độc lập? <span class="answer">→ Ghi nhận cụ thể — đây là nền tảng để Tuần 4 làm việc không có mentor can thiệp.</span></li>
+              <li>Scenario nào khó nhất và tại sao? <span class="answer">→ Phân tích điểm khó: thiếu thông tin quy trình, chưa quen hệ thống, hay chưa biết ai phụ trách?</span></li>
+              <li>Kế hoạch cụ thể để cải thiện điểm yếu trong 3 ngày tới? <span class="answer">→ Phải là hành động cụ thể: đọc SOP nào, luyện tool gì, hỏi ai — không phải "sẽ cố gắng hơn".</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Hoàn thành self-assessment, mentor sign-off Tuần 3, có kế hoạch cải thiện cụ thể cho Tuần 4.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Mentor chưa sign-off vì còn lỗ hổng nghiêm trọng → ôn thêm 2 ngày trước khi vào Tuần 4.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-21" onclick="markDone(21)">Đánh dấu hoàn thành Ngày 21</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -3195,11 +3506,317 @@
       <span class="week-toggle-btn">▼</span>
     </div>
     <div class="week-body">
-      <div class="coming-soon-week">
-        <span class="cs-icon">🔧</span>
-        <strong>Đang cập nhật nội dung đánh giá cuối kỳ</strong><br>
-        <span style="margin-top:6px;display:block">Sẽ bao gồm: final quiz 30 câu, đánh giá case thực tế, peer review, xác nhận hoàn thành 30 ngày</span>
+
+      <!-- Day 22 -->
+      <div class="day-card" id="day-22">
+        <div class="day-header" onclick="toggleDay('day-22')">
+          <div class="day-num" id="dn-22">22</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Ôn tập tổng thể — Self-Assessment 30 điểm</div>
+            <div class="day-sub">Tự chấm điểm từng quy trình đã học</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Bài tập</div>
+            <div class="practice-box">Tự chấm điểm (1–5) cho mỗi kỹ năng sau. Điểm 1 = chưa biết, điểm 5 = tự tin làm độc lập:<br><br>
+            · Quy trình nhận & xử lý đơn hàng phòng ban của bạn<br>
+            · Giao tiếp với khách hàng qua Zalo / email<br>
+            · Sử dụng hệ thống nội bộ (Pancake CRM, tool tracking)<br>
+            · Xử lý khiếu nại &amp; hoàn tiền<br>
+            · Phối hợp liên phòng ban và escalation<br>
+            · Báo cáo cuối ngày (EOD report)<br><br>
+            Nộp bảng tự chấm cho mentor trước 5 PM.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Kỹ năng nào bạn tự chấm dưới 3? <span class="answer">→ Đó là mục tiêu ưu tiên cần luyện trong Ngày 23–25.</span></li>
+              <li>Kỹ năng nào bạn tự tin nhất? <span class="answer">→ Đây là điểm mạnh — Tuần 4 bạn sẽ được đánh giá dựa trên kỹ năng này trước.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Nộp bảng tự chấm đúng hạn, trung thực, mentor xác nhận điểm yếu cần focus trong tuần.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Tự chấm không phản ánh thực tế (toàn 5 điểm hoặc không hoàn thành).</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-22" onclick="markDone(22)">Đánh dấu hoàn thành Ngày 22</button>
+        </div>
       </div>
+
+      <!-- Day 23 -->
+      <div class="day-card" id="day-23">
+        <div class="day-header" onclick="toggleDay('day-23')">
+          <div class="day-num" id="dn-23">23</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Final Quiz — 30 Câu Hỏi Tổng Hợp</div>
+            <div class="day-sub">Thi viết · 45 phút · Không dùng tài liệu</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Bài tập</div>
+            <div class="practice-box">Mentor phát đề quiz 30 câu (mix: trắc nghiệm + tình huống ngắn). Thời gian: 45 phút. Nội dung bao phủ toàn bộ 22 ngày học: quy trình phòng ban, SOP, xử lý khiếu nại, phối hợp nội bộ, công cụ.<br><br>Điểm đạt: ≥ 24/30 câu đúng (80%).</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Câu nào bạn không chắc chắn nhất khi làm bài? <span class="answer">→ Ghi nhận lại để review — đây là điểm mù cần lấp đầy trước Ngày 28.</span></li>
+              <li>Kết quả quiz phản ánh đúng năng lực thực tế không? <span class="answer">→ Quiz đo lý thuyết; Ngày 24–26 sẽ đo thực hành thực tế.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> ≥ 24/30 câu đúng. Mentor review kết quả và chốt điểm cần ôn thêm.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Dưới 24/30 → ôn lại phần bị sai, thi lại sau 2 ngày trước khi tiếp tục.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-23" onclick="markDone(23)">Đánh dấu hoàn thành Ngày 23</button>
+        </div>
+      </div>
+
+      <!-- Day 24 -->
+      <div class="day-card" id="day-24">
+        <div class="day-header" onclick="toggleDay('day-24')">
+          <div class="day-num" id="dn-24">24</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Thực hành độc lập — Ngày 1 (Có giám sát ngầm)</div>
+            <div class="day-sub">Mentor chỉ quan sát, không hướng dẫn</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Bài tập</div>
+            <div class="practice-box">Làm việc như một nhân viên chính thức trong 1 ngày. Mentor chỉ quan sát (không trả lời câu hỏi). Bạn xử lý ticket thực tế từ hàng đợi của phòng ban (hoặc case mô phỏng do mentor set up). Ghi chép mọi quyết định bạn đưa ra và lý do tại sao.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Khi không thể hỏi mentor, bạn tìm thông tin ở đâu? <span class="answer">→ SOP nội bộ, Trouble Handling Library, hỏi đồng nghiệp cùng cấp — đây là thứ tự ưu tiên.</span></li>
+              <li>Quyết định nào bạn cảm thấy không chắc nhất trong ngày? <span class="answer">→ Ghi nhận để review với mentor vào cuối ngày — đây là học liệu quý nhất.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Xử lý được ≥ 80% task trong ngày, không có lỗi nghiêm trọng, có EOD report đầy đủ.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Phải nhờ mentor can thiệp vì không biết phải làm gì, hoặc xử lý sai quy trình gây hậu quả.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-24" onclick="markDone(24)">Đánh dấu hoàn thành Ngày 24</button>
+        </div>
+      </div>
+
+      <!-- Day 25 -->
+      <div class="day-card" id="day-25">
+        <div class="day-header" onclick="toggleDay('day-25')">
+          <div class="day-num" id="dn-25">25</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Thực hành độc lập — Ngày 2 (Case khó hơn)</div>
+            <div class="day-sub">Mentor đưa thêm 1 case phức tạp vào giữa ngày</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Bài tập</div>
+            <div class="practice-box">Giống Ngày 24 nhưng mentor sẽ inject 1 case bất ngờ (khách VIP phàn nàn, sự cố hệ thống, hoặc đơn hàng cần xử lý gấp) vào lúc bạn đang bận nhất. Bạn phải tự ưu tiên lại công việc và xử lý.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Khi có task bất ngờ, bạn ưu tiên lại như thế nào? <span class="answer">→ Đánh giá urgency + impact; task đang làm dở có thể pause nếu case mới khẩn hơn; thông báo các bên liên quan.</span></li>
+              <li>Bạn có cảm thấy overwhelmed không và xử lý thế nào? <span class="answer">→ Ghi nhận cảm giác đó — nếu thường xuyên overwhelmed là dấu hiệu cần cải thiện workload management.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Xử lý được case bất ngờ mà không bỏ sót task cũ, ưu tiên đúng, không panic.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Bỏ sót task cũ, xử lý sai thứ tự ưu tiên, hoặc cần mentor giải thích cách xử lý.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-25" onclick="markDone(25)">Đánh dấu hoàn thành Ngày 25</button>
+        </div>
+      </div>
+
+      <!-- Day 26 -->
+      <div class="day-card" id="day-26">
+        <div class="day-header" onclick="toggleDay('day-26')">
+          <div class="day-num" id="dn-26">26</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Peer Review — Đánh giá chéo với đồng nghiệp</div>
+            <div class="day-sub">Nhận xét từ người cùng cấp · Không phải từ mentor</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Bài tập</div>
+            <div class="practice-box">Một đồng nghiệp trong team (hoặc từ phòng ban khác) sẽ review 3 case bạn đã xử lý trong Ngày 24–25. Họ đưa ra nhận xét theo form chuẩn: điều làm tốt, điều có thể làm tốt hơn, câu hỏi họ muốn hỏi bạn.<br><br>Bạn cũng review lại case của họ theo cách tương tự.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Nhận xét từ peer khác gì so với nhận xét từ mentor? <span class="answer">→ Peer thường nhìn từ góc độ thực tế làm việc hàng ngày, phát hiện điểm mà mentor có thể bỏ qua.</span></li>
+              <li>Bạn đồng ý với tất cả nhận xét từ peer không? Nếu không, tại sao? <span class="answer">→ Ghi nhận điểm không đồng ý và lý do — điều đó cũng là học liệu quan trọng về cách nhìn nhận vấn đề.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Hoàn thành peer review đôi chiều, nhận ít nhất 1 điểm cải thiện có giá trị từ đồng nghiệp.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Không hoàn thành form review, hoặc review quá chung chung không có điểm cụ thể.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-26" onclick="markDone(26)">Đánh dấu hoàn thành Ngày 26</button>
+        </div>
+      </div>
+
+      <!-- Day 27 -->
+      <div class="day-card" id="day-27">
+        <div class="day-header" onclick="toggleDay('day-27')">
+          <div class="day-num" id="dn-27">27</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Final Case Study — Xử lý từ đầu đến cuối</div>
+            <div class="day-sub">1 case phức tạp · Tự xử lý hoàn toàn · Mentor chấm điểm</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Bài tập</div>
+            <div class="practice-box">Mentor đưa ra 1 case phức tạp kết hợp nhiều kỹ năng (ví dụ: khách VIP đặt đơn lớn, hàng giao thiếu 2 items, tracking sai, khách yêu cầu hoàn tiền gấp, và cần phối hợp 2 phòng ban). Bạn có 90 phút để xử lý toàn bộ và viết báo cáo tóm tắt.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Bạn mất nhiều thời gian nhất ở bước nào? <span class="answer">→ Bước tốn nhiều thời gian nhất thường là điểm cần tối ưu quy trình hoặc bổ sung công cụ.</span></li>
+              <li>Nếu làm lại từ đầu, bạn sẽ thay đổi điều gì? <span class="answer">→ Câu trả lời cho thấy bạn đã học được gì từ case — đây là dấu hiệu tư duy cải tiến.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Xử lý đúng quy trình ≥ 4/5 bước, có báo cáo tóm tắt rõ ràng, mentor chấm ≥ 7/10 điểm.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Dưới 7/10, thiếu bước quan trọng, hoặc báo cáo không đầy đủ.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-27" onclick="markDone(27)">Đánh dấu hoàn thành Ngày 27</button>
+        </div>
+      </div>
+
+      <!-- Day 28 -->
+      <div class="day-card" id="day-28">
+        <div class="day-header" onclick="toggleDay('day-28')">
+          <div class="day-num" id="dn-28">28</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Thực hành độc lập hoàn toàn — Ngày chốt</div>
+            <div class="day-sub">Mentor không có mặt · Tự xử lý mọi thứ trong ngày</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Bài tập</div>
+            <div class="practice-box">Đây là ngày đầu tiên mentor KHÔNG có mặt (chỉ liên lạc được qua chat nếu khẩn cấp thực sự). Bạn làm việc như nhân viên chính thức. Ghi lại tất cả quyết định quan trọng trong ngày vào nhật ký công việc. Nộp EOD report đầy đủ cho mentor review vào cuối ngày.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>Bạn có liên hệ mentor trong ngày không? Vì lý do gì? <span class="answer">→ Không liên hệ = tốt. Có liên hệ = ghi nhận lý do để xem đó là điểm yếu hay tình huống thực sự cần leo thang.</span></li>
+              <li>Bạn cảm thấy thế nào khi không có mentor bên cạnh? <span class="answer">→ Tự tin là tốt. Lo lắng về 1 vấn đề cụ thể là bình thường — ghi rõ vấn đề đó để giải quyết Ngày 29.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Hoàn thành ngày làm việc độc lập, EOD report đầy đủ, không có sự cố nghiêm trọng.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Cần liên hệ mentor nhiều lần vì không biết xử lý cơ bản, hoặc bỏ sót task quan trọng.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-28" onclick="markDone(28)">Đánh dấu hoàn thành Ngày 28</button>
+        </div>
+      </div>
+
+      <!-- Day 29 -->
+      <div class="day-card" id="day-29">
+        <div class="day-header" onclick="toggleDay('day-29')">
+          <div class="day-num" id="dn-29">29</div>
+          <div class="day-title-wrap">
+            <div class="day-title">Mentor Sign-Off — KPI Review & Chốt Điểm Yếu</div>
+            <div class="day-sub">Buổi đánh giá chính thức · 90 phút với mentor</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">📋 Nội dung buổi</div>
+            <div class="practice-box">Mentor review toàn bộ kết quả 4 tuần: quiz, case study, EOD reports, peer review. Đánh giá từng KPI phòng ban. Xác nhận nhân viên đủ điều kiện làm độc lập chưa.<br><br>Bạn cần chuẩn bị: tự đánh giá 4 tuần (1 trang A4), 3 mục tiêu cho tháng tiếp theo, 1 câu hỏi về phát triển nghề nghiệp tại THG.</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">❓ Câu hỏi sau bài</div>
+            <ul class="check-list">
+              <li>KPI nào bạn đạt, KPI nào chưa? <span class="answer">→ Ghi rõ số liệu cụ thể — không phải cảm giác, mà là tỷ lệ, thời gian xử lý, điểm quiz thực tế.</span></li>
+              <li>Điểm yếu nào mentor đề cập và kế hoạch cải thiện là gì? <span class="answer">→ Phải là action cụ thể với deadline, không phải lời hứa chung chung.</span></li>
+              <li>Bạn muốn phát triển theo hướng nào trong 3 tháng tới? <span class="answer">→ Đây là cơ hội để định hướng với quản lý — hãy cụ thể: kỹ năng, vị trí, hoặc mảng muốn chuyên sâu.</span></li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí Pass / Fail</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ PASS</strong> Mentor ký sign-off, xác nhận nhân viên đủ điều kiện làm việc độc lập từ Ngày 31 trở đi.</div>
+              <div class="fail-box"><strong>❌ FAIL</strong> Mentor chưa sign-off vì còn kỹ năng chưa đạt → gia hạn onboarding 1–2 tuần với kế hoạch cụ thể.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-29" onclick="markDone(29)">Đánh dấu hoàn thành Ngày 29</button>
+        </div>
+      </div>
+
+      <!-- Day 30 -->
+      <div class="day-card" id="day-30">
+        <div class="day-header" onclick="toggleDay('day-30')">
+          <div class="day-num" id="dn-30">30</div>
+          <div class="day-title-wrap">
+            <div class="day-title">🎓 Ngày Tốt Nghiệp — Bàn Giao Độc Lập</div>
+            <div class="day-sub">Hoàn thành 30 ngày · Nhận đủ quyền tự xử lý · Kế hoạch tháng 2</div>
+          </div>
+          <div class="day-check-wrap"><span class="day-done-badge">✅ Hoàn thành</span><span class="day-arrow">▶</span></div>
+        </div>
+        <div class="day-body">
+          <div class="db-section">
+            <div class="db-section-title">🎯 Ngày cuối cùng</div>
+            <div class="practice-box">Không có bài tập — đây là ngày bàn giao. Bạn chính thức là thành viên độc lập của team.<br><br>Các việc cần làm trong ngày:<br>
+            · Nhận đủ quyền truy cập hệ thống chính thức từ IT/HR<br>
+            · Bàn giao với mentor: confirm mọi tài khoản, quyền, và SOP đã hiểu<br>
+            · Gặp trưởng phòng 15 phút: nhận kỳ vọng cho tháng đầu làm việc thực tế<br>
+            · Viết 1 đoạn ngắn (3–5 câu): điều bạn học được nhất trong 30 ngày và chia sẻ với team</div>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">🏆 Kế hoạch tháng tiếp theo</div>
+            <ul class="check-list">
+              <li>Mục tiêu tháng 1 làm việc thực tế đã được thống nhất với quản lý</li>
+              <li>Điểm yếu từ onboarding đã có kế hoạch cải thiện cụ thể</li>
+              <li>Biết kênh hỗ trợ khi gặp vấn đề vượt tầm xử lý</li>
+            </ul>
+          </div>
+          <div class="db-section">
+            <div class="db-section-title">✅ Tiêu chí hoàn thành 30 ngày</div>
+            <div class="pass-fail-row">
+              <div class="pass-box"><strong>✅ TỐT NGHIỆP</strong> Mentor sign-off (Ngày 29) ✓ · Quiz ≥ 80% ✓ · Final case study ≥ 7/10 ✓ · Làm độc lập 2 ngày thành công ✓</div>
+              <div class="fail-box"><strong>⏳ GIA HẠN</strong> Chưa đủ 1 trong 4 tiêu chí → gia hạn 1 tuần với kế hoạch tập trung vào điểm thiếu.</div>
+            </div>
+          </div>
+          <button class="day-complete-btn" id="btn-30" onclick="markDone(30)" style="background:var(--green)">🎓 Hoàn thành 30 Ngày Đào Tạo!</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
