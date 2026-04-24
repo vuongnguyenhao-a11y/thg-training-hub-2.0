@@ -207,6 +207,42 @@
     @media (max-width: 480px) {
       .stats-row { grid-template-columns: 1fr 1fr; gap: 10px; }
     }
+
+    /* ── VIEW SWITCHING ── */
+    .view { display: none; }
+    .view.active { display: block; }
+
+    /* ── DASHBOARD VIEW ── */
+    .dash-welcome { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); color: #fff; border-radius: 16px; padding: 28px 32px; margin-bottom: 24px; }
+    .dash-welcome h1 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .dash-welcome p { font-size: 13px; opacity: 0.85; margin-bottom: 20px; }
+    .dash-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .dash-cta { padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.15s; }
+    .dash-cta:hover { opacity: 0.9; }
+    .dash-cta.primary { background: #fff; color: var(--blue); }
+    .dash-cta.secondary { background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+    .service-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; text-decoration: none; color: inherit; transition: box-shadow 0.15s, border-color 0.15s; }
+    .service-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: var(--blue); }
+    .sc-icon { font-size: 28px; margin-bottom: 10px; }
+    .sc-title { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+    .sc-desc { font-size: 12px; color: var(--gray-600); line-height: 1.5; }
+    .sc-tag { display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+    .sc-tag.green { background: var(--green-bg); color: var(--green); }
+    .sc-tag.orange { background: var(--orange-bg); color: var(--orange); }
+    .sc-tag.blue { background: var(--blue-light); color: var(--blue); }
+    .sop-quick { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px 24px; }
+    .sop-quick h3 { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 14px; }
+    .sop-row { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--gray-100); text-decoration: none; color: inherit; gap: 12px; }
+    .sop-row:last-child { border-bottom: none; }
+    .sop-row:hover { color: var(--blue); }
+    .sop-id { font-size: 11px; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+    .sop-name { flex: 1; font-size: 13px; font-weight: 600; }
+    .sop-dept { font-size: 11px; color: var(--gray-600); }
+    @media (max-width: 640px) {
+      .service-grid { grid-template-columns: 1fr; }
+      .dash-cta-row { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
@@ -224,10 +260,6 @@
     </div>
   </div>
   <div class="topbar-right">
-    <form class="search-wrap" onsubmit="doSearch(event)" autocomplete="off">
-      <button type="submit" aria-label="Tìm kiếm">🔍</button>
-      <input type="search" placeholder="Tìm trong Hub…" name="q" aria-label="Từ khóa tìm kiếm">
-    </form>
     <span class="version">v2.0 · 2025</span>
     <div class="user-pill">
       <div class="avatar">TH</div>
@@ -240,15 +272,13 @@
 <nav class="sidebar" id="sidebar">
   <div class="nav-section">
     <div class="nav-section-label">Tổng quan</div>
-    <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span> Dashboard</a>
-    <a href="lich-training.html" class="nav-item"><span class="nav-icon">📋</span> Lịch Training</a>
-    <a href="tiendo.html" class="nav-item"><span class="nav-icon">📊</span> Tiến độ của tôi</a>
+    <a href="#" class="nav-item" id="nav-dashboard" data-view="dashboard" onclick="switchView('dashboard');return false;"><span class="nav-icon">🏠</span> Dashboard</a>
+    <a href="#" class="nav-item active" id="nav-roadmap" data-view="roadmap" onclick="switchView('roadmap');return false;"><span class="nav-icon">📅</span> Lộ Trình 30 Ngày <span class="nav-badge" style="background:#7c3aed">Hot</span></a>
   </div>
   <div class="nav-divider"></div>
   <div class="nav-section">
     <div class="nav-section-label">Đào Tạo</div>
     <a href="onboarding.html" class="nav-item"><span class="nav-icon">🎓</span> Onboarding Roadmap <span class="nav-badge" style="background:#0d9488">Mới</span></a>
-    <a href="training-roadmap.html" class="nav-item active"><span class="nav-icon">📅</span> Lộ Trình 30 Ngày <span class="nav-badge" style="background:#7c3aed">Hot</span></a>
   </div>
   <div class="nav-divider"></div>
   <div class="nav-section">
@@ -271,27 +301,127 @@
     <div class="nav-section-label">Xử Lý Sự Cố</div>
     <a href="trouble.html" class="nav-item"><span class="nav-icon">🚨</span> Trouble Handling <span class="nav-badge" style="background:#ef4444">34 cases</span></a>
   </div>
-  <div class="nav-divider"></div>
-  <div class="nav-section">
-    <div class="nav-section-label">Công Cụ & Hệ Thống</div>
-    <a href="crm.html" class="nav-item"><span class="nav-icon">💬</span> Pancake CRM</a>
-    <a href="template.html" class="nav-item"><span class="nav-icon">📝</span> Template & Script</a>
-    <a href="video.html" class="nav-item"><span class="nav-icon">🎬</span> Thư viện Video</a>
-  </div>
 </nav>
 
 <!-- BOTTOM NAV (mobile) -->
 <nav class="bottom-nav">
   <div class="bottom-nav-inner">
-    <a href="index.html" class="bn-item"><span class="bn-icon">🏠</span>Home</a>
-    <a href="training-roadmap.html" class="bn-item active"><span class="bn-icon">📅</span>Roadmap</a>
+    <a href="#" class="bn-item" onclick="switchView('dashboard');return false;"><span class="bn-icon">🏠</span>Dashboard</a>
+    <a href="#" class="bn-item active" id="bn-roadmap" onclick="switchView('roadmap');return false;"><span class="bn-icon">📅</span>Lộ Trình</a>
     <a href="onboarding.html" class="bn-item"><span class="bn-icon">🎓</span>Onboarding</a>
-    <a href="search.html" class="bn-item"><span class="bn-icon">🔍</span>Tìm</a>
+    <a href="trouble.html" class="bn-item"><span class="bn-icon">🚨</span>Sự Cố</a>
   </div>
 </nav>
 
 <!-- MAIN -->
 <main class="main">
+
+  <!-- ═══ VIEW: DASHBOARD ═══ -->
+  <div class="view" id="view-dashboard">
+
+    <!-- Welcome Banner -->
+    <div class="dash-welcome">
+      <h1>🦅 THG Fulfill Corp — Training Hub</h1>
+      <p>Hệ thống đào tạo nội bộ · Chương trình onboarding 30 ngày có cấu trúc · Dành riêng cho nhân viên THG</p>
+      <div class="dash-cta-row">
+        <button class="dash-cta primary" onclick="switchView('roadmap')">📅 Bắt đầu Lộ Trình 30 Ngày →</button>
+        <a href="onboarding.html" class="dash-cta secondary">🎓 Onboarding Roadmap</a>
+        <a href="trouble.html" class="dash-cta secondary">🚨 Trouble Handling</a>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row" style="margin-bottom:24px">
+      <div class="stat-card">
+        <div class="stat-icon blue">📅</div>
+        <div class="stat-info"><div class="val">30</div><div class="lbl">Ngày đào tạo</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon orange">📦</div>
+        <div class="stat-info"><div class="val">4</div><div class="lbl">Mảng dịch vụ</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">📋</div>
+        <div class="stat-info"><div class="val">7</div><div class="lbl">SOP vận hành</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon purple">👥</div>
+        <div class="stat-info"><div class="val">8</div><div class="lbl">Phòng ban</div></div>
+      </div>
+    </div>
+
+    <!-- 4 Service Cards -->
+    <div style="margin-bottom:8px"><strong style="font-size:13px;color:var(--gray-700)">📦 4 Mảng Dịch Vụ THG</strong></div>
+    <div class="service-grid">
+      <a href="pod.html" class="service-card">
+        <div class="sc-icon">🖨️</div>
+        <div class="sc-title">POD – Print on Demand</div>
+        <div class="sc-desc">Xử lý đơn in ấn theo yêu cầu: từ tiếp nhận file design đến giao hàng tận tay khách Mỹ & EU.</div>
+        <span class="sc-tag green">Đang mở</span>
+      </a>
+      <a href="dropship.html" class="service-card">
+        <div class="sc-icon">📦</div>
+        <div class="sc-title">Dropship – Vận chuyển thẳng</div>
+        <div class="sc-desc">Hướng dẫn vận hành dropshipping TQ/VN đến khách quốc tế: order, tracking, xử lý khiếu nại.</div>
+        <span class="sc-tag green">Đang mở</span>
+      </a>
+      <a href="fulfill.html" class="service-card">
+        <div class="sc-icon">✈️</div>
+        <div class="sc-title">Fulfill – TQ → USA & Toàn cầu</div>
+        <div class="sc-desc">Quy trình fulfillment kho Trung Quốc → Mỹ: nhập kho, đóng gói, vận chuyển, theo dõi đơn hàng quốc tế.</div>
+        <span class="sc-tag green">Đang mở</span>
+      </a>
+      <a href="express.html" class="service-card">
+        <div class="sc-icon">🚚</div>
+        <div class="sc-title">Express – Vận chuyển nội địa</div>
+        <div class="sc-desc">Dịch vụ giao hàng nhanh nội địa VN và quốc tế. SOP phối hợp với đối tác vận chuyển, xử lý sự cố.</div>
+        <span class="sc-tag orange">Đang cập nhật</span>
+      </a>
+    </div>
+
+    <!-- SOP Quick Links -->
+    <div class="sop-quick">
+      <h3>📋 SOP Vận Hành — Truy cập nhanh</h3>
+      <a href="sop-sale.html" class="sop-row">
+        <span class="sop-id">SOP-001</span>
+        <span class="sop-name">Lead Management — Tiếp nhận & phân loại khách hàng</span>
+        <span class="sop-dept">Sale & MKT</span>
+      </a>
+      <a href="sop-cskh.html" class="sop-row">
+        <span class="sop-id">SOP-002</span>
+        <span class="sop-name">Customer Handoff — Bàn giao khách Sale → CSKH</span>
+        <span class="sop-dept">CSKH</span>
+      </a>
+      <a href="pod.html" class="sop-row">
+        <span class="sop-id">SOP-003</span>
+        <span class="sop-name">POD / Dropship Operations — Xử lý đơn hàng</span>
+        <span class="sop-dept">POD / Dropship</span>
+      </a>
+      <a href="sop-finance.html" class="sop-row">
+        <span class="sop-id">SOP-004</span>
+        <span class="sop-name">Công nợ khách hàng — Thu hồi & xử lý tranh chấp</span>
+        <span class="sop-dept">Kế toán</span>
+      </a>
+      <a href="trouble.html" class="sop-row">
+        <span class="sop-id">SOP-005</span>
+        <span class="sop-name">Trouble Handling — 34 cases xử lý sự cố thực tế</span>
+        <span class="sop-dept">Tất cả</span>
+      </a>
+      <a href="sop-cross.html" class="sop-row">
+        <span class="sop-id">SOP-006</span>
+        <span class="sop-name">Phối hợp liên phòng ban — Escalation matrix</span>
+        <span class="sop-dept">Liên phòng ban</span>
+      </a>
+    </div>
+
+    <div style="margin-top:48px;padding-top:20px;border-top:1px solid var(--gray-200);text-align:center">
+      <p style="font-size:12px;color:var(--gray-400)">THG Fulfill Corp Internal Training Hub · v2.0 · <a href="mailto:info@thgfulfill.com" style="color:var(--blue)">info@thgfulfill.com</a> · <a href="https://www.thgfulfill.com" style="color:var(--blue)" target="_blank">www.thgfulfill.com</a></p>
+    </div>
+
+  </div><!-- /view-dashboard -->
+
+  <!-- ═══ VIEW: ROADMAP ═══ -->
+  <div class="view active" id="view-roadmap">
 
   <!-- PAGE HEADER -->
   <div class="page-header">
@@ -3822,8 +3952,10 @@
 
   <!-- FOOTER -->
   <div style="margin-top:48px;padding-top:20px;border-top:1px solid var(--gray-200);text-align:center">
-    <p style="font-size:12px;color:var(--gray-400)">THG Internal Training Hub · Lộ Trình 30 Ngày v1.0 · <a href="mailto:info@thgfulfill.com" style="color:var(--blue)">Báo lỗi / góp ý</a> · <a href="https://www.thgfulfill.com" style="color:var(--blue)" target="_blank">www.thgfulfill.com</a></p>
+    <p style="font-size:12px;color:var(--gray-400)">THG Fulfill Corp Internal Training Hub · Lộ Trình 30 Ngày v1.0 · <a href="mailto:info@thgfulfill.com" style="color:var(--blue)">info@thgfulfill.com</a> · <a href="https://www.thgfulfill.com" style="color:var(--blue)" target="_blank">www.thgfulfill.com</a></p>
   </div>
+
+  </div><!-- /view-roadmap -->
 
 </main>
 
@@ -3837,10 +3969,18 @@
     o.classList.toggle('show');
   }
 
-  function doSearch(e) {
-    e.preventDefault();
-    var q = e.target.querySelector('input').value.trim();
-    if (q) window.location = 'search.html?q=' + encodeURIComponent(q);
+  function switchView(name) {
+    document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
+    var v = document.getElementById('view-' + name);
+    if (v) v.classList.add('active');
+    document.querySelectorAll('.nav-item[data-view]').forEach(function(n){ n.classList.remove('active'); });
+    var navItem = document.querySelector('.nav-item[data-view="' + name + '"]');
+    if (navItem) navItem.classList.add('active');
+    localStorage.setItem('thg_active_view', name);
+    window.scrollTo(0, 0);
+    var s = document.getElementById('sidebar');
+    var o = document.getElementById('overlay');
+    if (s && s.classList.contains('open')) { s.classList.remove('open'); o.classList.remove('show'); }
   }
 
   function toggleWeek(id) {
@@ -3970,6 +4110,11 @@
     var lastDept = localStorage.getItem('thg_w2_active_dept') || 'pod';
     switchDept(lastDept);
     renderW2Progress(lastDept);
+  })();
+  /* restore last view */
+  (function(){
+    var lastView = localStorage.getItem('thg_active_view') || 'dashboard';
+    switchView(lastView);
   })();
 </script>
 </body>
